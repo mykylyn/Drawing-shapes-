@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.awt.geom.*;
 import javax.swing.JComponent;
+import javax.swing.*;
 
 public class House extends JComponent
 {
@@ -31,10 +32,17 @@ public class House extends JComponent
 		// RoundedRectangle2D Branch=new RoundedRectangle2D.Float(Main.Width-200,Main.Height-250-350,50,350,10,10);
 		// g2.fill(Branch);
 
-		g2.setColor(Color.red);
-		Rectangle Branch2=new Rectangle(Main.Width-210,Main.Height-250,10,10);
+		g2.setColor(new Color(128, 86, 44));
+            	RoundRectangle2D Branch2=new RoundRectangle2D.Float(Main.Width-210,Main.Height-250-300,50,300,10,10);
 		g2.fill(Branch2);
 		
+		g2.setColor(new Color(88, 129, 87));
+		Shape TopOfTree= new Ellipse2D.Double(Main.Width-210-150+25,Main.Height-250-300-300+20,300,300);
+                                                        		//half                     //BUFFER
+		g2.fill(TopOfTree);
+		
+		Polygon Roof= new Polygon(new int[] {50, 111, 50+Main.Width/3}, new int[] {Main.Height-200-300, 300, Main.Height-200-300}, 3);
+		g2.fill(Roof);
     // eye.translate(150,0);
     // g2.fill(eye);
 
